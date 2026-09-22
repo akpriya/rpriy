@@ -55,6 +55,8 @@ export default class ToDoManagerComponent extends LightningElement {
         });
         return sortedArray;
     }
-    removeHandler(event){}
+    removeHandler(event){
+        let index = event.target;
+    }
     completeTaskHandler(event){}
 }
