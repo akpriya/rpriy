@@ -1,3 +1,14 @@
 <template>
-
+    <lightning-card title="Lightning component using Wire Decorators">
+        <div>
+            <div style="height: 300px; width: 50%">
+                <lightning-datatable key-field="id" data={accounts.data} columns={columns}>
+                </lightning-datatable>
+            </div>
+            <div style="height: 300px; width: 50%">
+                <lightning-datatable key-field="id" data={accounts.data} columns={columns}>
+                </lightning-datatable>
+            </div>
+        </div>
+    </lightning-card>
 </template>

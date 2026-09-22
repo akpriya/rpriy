@@ -56,7 +56,29 @@ export default class ToDoManagerComponent extends LightningElement {
         return sortedArray;
     }
     removeHandler(event){
-        let index = event.target;
+        let index = event.target.name;
+        this.incompletedtask.splice(index, 1);
+        let sortedArray = this.sortTask(this.incompletedtask);
+        this.incompletedtask = [...sortedArray];
     }
-    completeTaskHandler(event){}
+    completeTaskHandler(event){
+        let index = event.target.name;
+        this.refreshData(index);
+    }
+    dragStartHandler(event){
+        event.dataTransfer.setData("index", event.target.dataset.item);
+    }
+    allowDrop(event){
+        event.preventDefault();
+    }
+    dropElementHandler(event){
+        let index = event.dataTransfer.getData("index");
+        this.refreshData(index);
+    }
+    refreshData(index){
+let removeItem = this.incompletedtask.splice(index, 1);
+        let sortedArray = this.sortTask(this.incompletedtask);
+        this.incompletedtask = [...sortedArray];
+        this.completedtask = [...this.completedtask, removeItem[0]];
+    }
 }
