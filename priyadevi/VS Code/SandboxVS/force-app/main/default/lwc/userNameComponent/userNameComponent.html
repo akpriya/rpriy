@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="User Name Creation" icon-name="standard:event">
+        <div class="slds-var-p-around_small">
+            <lightning-input type="text" label="First Name" name="firstName" onchange={NameHandler} value={firstName} placeholder="Enter a First Name">
+            </lightning-input>
+            <lightning-input type="text" label="Last Name" name="lastName" onchange={NameHandler} value={lastName} placeholder="Enter a Last Name">
+            </lightning-input>
+        </div>
+        <div class="slds-var-p-around_small">
+            <lightning-button class="slds-var-p-around-medium" variant="brand" label="Generate Username" onclick={usernameGeneration} title="Generate a Username">
+            </lightning-button>
+        </div>
+        <template lwc:if={displayMessage}>
+            <div class="slds-var-p-around_medium">
+                <p>Username: {userName}</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>
