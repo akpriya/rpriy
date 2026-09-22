@@ -24,7 +24,7 @@
             <lightning-card title="To Do List">
                 <div class="slds-var-p-around_small">
                     <template for:each={incompletedtask} for:item="currTask" for:index="index">
-                        <div key={currTask.taskname} class="slds-box slds-theme_shade">
+                        <div key={currTask.taskname} class="slds-box slds-theme_shade incompletebg">
                             <div class="slds-grid slds-wrap">
                                 <div class="slds-col slds-size_8-of-12">
                                     <p>{currTask.taskname}</p>
@@ -34,11 +34,12 @@
                                 </div>
                                 <div class="slds-col slds-size_4-of-12">
                                     <lightning-button-icon icon-name="utility:delete" alternative-text="Delete"
-                                        class="slds-m-left_xx-small" title="Delete" onclick={removeHandler}>
+                                        class="slds-m-left_xx-small" title="Delete" onclick={removeHandler}
+                                        name={index}>
                                     </lightning-button-icon>
                                     <lightning-button-icon icon-name="utility:check" alternative-text="Check"
                                         class="slds-m-left_xx-small" title="Check Completed"
-                                        onclick={completeTaskHandler}>
+                                        onclick={completeTaskHandler} name={index}>
                                     </lightning-button-icon>
                                 </div>
                             </div>
