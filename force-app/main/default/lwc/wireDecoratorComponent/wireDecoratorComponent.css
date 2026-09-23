@@ -1,8 +1,8 @@
 .propertydiv{
     max-width: fit-content;
-    max-height: fit-content;
+    /*height: fit-content;*/
 }
 .functiondiv{
     max-width: fit-content;
-    max-height: fit-content;
+    /*height: fit-content;*/
 }
