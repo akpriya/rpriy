@@ -22,7 +22,6 @@ export default class WireDecoratorComponent extends LightningElement {
                 }
             return updatedObject;
         });
-            
             this.accountsfn = [...updatedAccounts];
             this.errors = null;
         }else if(error){
