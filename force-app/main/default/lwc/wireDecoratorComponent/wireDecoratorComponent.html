@@ -9,8 +9,13 @@
             </div>
             <div class="slds-col slds-size_1-of-2 functiondiv">
                 <lightning-card title="Wire Decorators Using Function">
-                    <lightning-datatable key-field="id" data={accountsfn} columns={columns}>
-                    </lightning-datatable>
+                    <template lwc:if={accounts}>
+                        <lightning-datatable key-field="id" data={accountsfn} columns={columns}>
+                        </lightning-datatable>
+                    </template>
+                    <template lwc:elseif={errors}>
+                        <c-error-panel errors={errors}></c-error-panel>
+                    </template>
                 </lightning-card>
             </div>
         </div>

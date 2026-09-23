@@ -1,0 +1,13 @@
+<template>
+    <template lwc:if={errorMessages.length}>
+        <div class="slds-notify slds-notify_alert slds-theme_error" role="alert">
+            <span class="slds-assistive-text">Error</span>
+
+            <div>
+                <template for:each={errorMessages} for:item="message">
+                    <p key={message}>{message}</p>
+                </template>
+            </div>
+        </div>
+    </template>
+</template>
