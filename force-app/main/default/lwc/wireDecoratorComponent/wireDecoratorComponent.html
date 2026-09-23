@@ -1,13 +1,17 @@
 <template>
     <lightning-card title="Lightning component using Wire Decorators">
-        <div>
-            <div style="height: 300px; width: 50%">
-                <lightning-datatable key-field="id" data={accounts.data} columns={columns}>
-                </lightning-datatable>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2" style="height: 300px; width: 50%">
+                <lightning-card title="Wire Decorators Using Property">
+                    <lightning-datatable key-field="id" data={accounts.data} columns={columns}>
+                    </lightning-datatable>
+                </lightning-card>
             </div>
-            <div style="height: 300px; width: 50%">
-                <lightning-datatable key-field="id" data={accounts.data} columns={columns}>
-                </lightning-datatable>
+            <div class="slds-col slds-size_1-of-2" style="height: 300px; width: 50%">
+                <lightning-card title="Wire Decorators Using Function">
+                    <lightning-datatable key-field="id" data={accountsfn} columns={columns}>
+                    </lightning-datatable>
+                </lightning-card>
             </div>
         </div>
     </lightning-card>
