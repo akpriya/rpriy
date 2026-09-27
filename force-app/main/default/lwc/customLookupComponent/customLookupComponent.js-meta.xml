@@ -4,5 +4,17 @@
     <isExposed>true</isExposed>
     <targets>
         <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
     </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage, lightning__RecordPage">
+            <property name="apiName" type="String" required="true" default="Account"
+                label="Enter Object API Name" />
+            <property name="objectLabel" type="String" required="true" default="Account"
+                label="Enter Object Label" />
+            <property name="iconName" type="String" required="true"
+                default="standard:account"
+                label="Enter Icon for Object" description="Check SLDS for More Icon info..." />
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>
