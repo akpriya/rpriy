@@ -1,5 +1,5 @@
 <template>
-    <div class="slds-form-element" style="width:700px; margin: 0 auto">
+    <div class="slds-form-element" style="width:100%; margin: 0 auto">
         <label class="slds-form-element__label" for="combobox-id-3" id="combobox-label-id-9">{objectLabel}</label>
         <div class="slds-form-element__control">
             <div class="slds-combobox_container">
@@ -24,9 +24,8 @@
                                     id="combobox-value-id-20">{selectedRecord.selectedName}</span>
                             </div>
                             <button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right"
-                                title="Remove selected option">
-                                <lightning-icon size="small" icon-name="utility:close"
-                                    onclick={removalSelectionHandler}></lightning-icon>
+                                onclick={removalSelectionHandler} title="Remove selected option">
+                                <lightning-icon size="small" icon-name="utility:close"></lightning-icon>
                                 <!-- <svg class="slds-button__icon" aria-hidden="true">
                                     <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
                                 </svg> -->
@@ -37,7 +36,7 @@
                     <template lwc:else>
                         <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right"
                             role="none">
-                            <input class="slds-input slds-combobox__input slds-has-focus" id="combobox-id-3"
+                            <input class="slds-input slds-combobox__input" id="combobox-id-3"
                                 aria-activedescendant="option1" aria-autocomplete="list" aria-controls="listbox-id-3"
                                 aria-expanded="true" aria-haspopup="listbox" role="combobox" type="text"
                                 placeholder="Search..." onkeyup={changeHandler} />
