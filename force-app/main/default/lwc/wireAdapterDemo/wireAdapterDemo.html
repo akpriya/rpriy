@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="WireAdapter Demo">
+        <div class="slds-var-p-around_small">
+            <lightning-combobox class="validateme" label="Select Parent Account" placeholder="Select an Account..."
+                name="parentAcc" onchange={changeHandler} options={parentOptions} value={selParentAcc}
+                message-when-value-missing="Please select Parent Account" required></lightning-combobox>
+            <lightning-input class="validateme" label="Account Name" name="accName" value={selAccName} type="text"
+                message-when-value-missing="Please enter Account Name" min-length="3" max-length="60"
+                onchange={changeHandler} required></lightning-input>
+            <lightning-input class="validateme" label="SLA Expiration Date" type="date" name="slaexpdt"
+                value={selSlaExpDate} onchange={changeHandler}
+                message-when-value-missing="Please select SLA Expiration Date" required></lightning-input>
+            <template lwc:if={slaTypePicklist.data}>
+                <lightning-radio-group class="validateme" label="SLA Type:" name="slaType" value={selSlaType}
+                    options={slaTypePicklist.data.values} type="button" onchange={changeHandler}
+                    message-when-value-missing="Please select SLA Type" required></lightning-radio-group>
+            </template>
+            <lightning-slider class="slds-var-p-around_small" label="No of Locations" min="0" max="50" step="1"
+                name="noOfLocations" value={selNoOfLocations} onchange={changeHandler}></lightning-slider>
+            <lightning-input-rich-text class="slds-var-p-around_small" label="Description" name="description"
+                value={selDescription} onchange={changeHandler}></lightning-input-rich-text>
+        </div>
+        <div class="slds-var-p-around_small">
+            <lightning-button label="Save" variant="brand" onclick={saveRecord}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
